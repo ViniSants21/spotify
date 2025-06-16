@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pétalas - Tavin | Spotify</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Spotify+Circular&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="player.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="spotify-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" alt="Spotify Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Buscar</a></li>
+        </ul>
+      </nav>
+
+      <section class="library">
+        <div class="create-playlist">
+          <strong>Crie sua primeira playlist</strong>
+          <p>É fácil, vamos te ajudar.</p>
+          <button>Criar playlist</button>
+        </div>
+        <div class="podcast">
+          <strong>Que tal seguir um podcast novo?</strong>
+          <p>Avisaremos você sobre novos episódios.</p>
+          <button>Explore podcasts</button>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">Legal</a> ·
+          <a href="#">Segurança e Centro de privacidade</a> ·
+          <a href="#">Política de privacidade</a> ·
+          <a href="#">Cookies</a> ·
+          <a href="#">Sobre anúncios</a> ·
+          <a href="#">Acessibilidade</a>
+        </div>
+
+        <button class="language-btn">Português do Brasil</button>
+      </section>
+    </aside>
+
+    <main>
+      <header class="artist-header">
+        <div class="navigation-buttons">
+          <button class="nav-btn">&lt;</button>
+          <button class="nav-btn">&gt;</button>
+        </div>
+        <div class="artist-info">
+          <span class="verified">✔ Artista verificado</span>
+          <h1>Tavin</h1>
+          <p>75.491.397 ouvintes mensais</p>
+        </div>
+        <div class="header-actions">
+          <button class="play-btn" title="Tocar">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button class="follow-btn">Seguir</button>
+          <button class="more-btn">...</button>
+        </div>
+        <div class="header-login">
+          <a href="#" class="signup">Inscrever-se</a>
+          <button class="login-btn">Entrar</button>
+        </div>
+      </header>
+
+      <section class="content">
+        <section class="popular-tracks">
+          <h2>Populares</h2>
+          <ol>
+            <li>
+              <div class="track-photo" id="photo1">
+                <img src="https://via.placeholder.com/60x60?text=1" alt="Yellow" />
+              </div>
+              <strong>Yellow</strong>
+              <span class="play-count">2.284.538.898</span>
+              <span class="duration">4:26</span>
+            </li>
+            <li>
+              <div class="track-photo" id="photo2">
+                <img src="https://via.placeholder.com/60x60?text=2" alt="Something Just Like This" />
+              </div>
+              <strong>Something Just Like This</strong>
+              <span class="play-count">2.581.927.036</span>
+              <span class="duration">4:07</span>
+            </li>
+            <li>
+              <div class="track-photo" id="photo3">
+                <img src="https://via.placeholder.com/60x60?text=3" alt="Viva La Vida" />
+              </div>
+              <strong>Viva La Vida</strong>
+              <span class="play-count">2.087.407.255</span>
+              <span class="duration">4:02</span>
+            </li>
+            <li>
+              <div class="track-photo" id="photo4">
+                <img src="https://via.placeholder.com/60x60?text=4" alt="A Sky Full of Stars" />
+              </div>
+              <strong>A Sky Full of Stars</strong>
+              <span class="play-count">1.476.463.626</span>
+              <span class="duration">4:27</span>
+            </li>
+            <li>
+              <div class="track-photo" id="photo5">
+                <img src="https://via.placeholder.com/60x60?text=5" alt="The Scientist" />
+              </div>
+              <strong>The Scientist</strong>
+              <span class="play-count">1.121.289.739</span>
+              <span class="duration">5:09</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="artist-choice">
+          <h2>Escolha do artista</h2>
+          <div class="playlist-card">
+            <div class="playlist-photo" id="playlist-photo">
+              <img src="https://via.placeholder.com/120x120?text=Playlist" alt="Playlist Pétalas" />
+            </div>
+            <div class="playlist-info">
+              <span>All the hits on one playlist</span>
+              <strong>Pétalas - Tavin</strong>
+              <p>Playlist</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <audio id="audio-player" src="Tavin - Pétalas (Prod. Lerym) - Tavin.mp3"></audio>
+
+  <script>
+    const playButton = document.querySelector('.play-btn');
+    const playIcon = playButton.querySelector('i');
+    const audio = document.getElementById('audio-player');
+
+    playButton.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        playIcon.classList.remove('fa-play');
+        playIcon.classList.add('fa-pause');
+      } else {
+        audio.pause();
+        playIcon.classList.remove('fa-pause');
+        playIcon.classList.add('fa-play');
+      }
+    });
+  </script>
+</body>
+</html>
